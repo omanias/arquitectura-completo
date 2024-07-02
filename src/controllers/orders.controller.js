@@ -31,12 +31,11 @@ export const createOrder = async (req, res) => {
         number: orderNumber,
         business,
         user,
-        status: "pending",
         products: actualOrders.map(product => product.id),
-        totalPrice: sum
+        totalPrice: sum,
+        status: "pending"
     }
     let orderResult = await ordersService.createOrder(order)
-    resultUser.orders.push(orderResult._id)
     await usersService.updateUser(user, resultUser)
     res.send({ status: "success", orderResult })
 }

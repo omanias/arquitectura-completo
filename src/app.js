@@ -9,7 +9,7 @@ import mongoose from 'mongoose'
 const app = express()
 const PORT = 8080
 
-const connection = mongoose.connect('URL_MONGO')
+const connection = mongoose.connect('MONGO_URL')
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

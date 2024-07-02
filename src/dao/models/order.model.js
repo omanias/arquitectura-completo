@@ -13,7 +13,8 @@ const schema = new mongoose.Schema({
         ref: "Users"
     },
     products: [],
-    totalPrice: Number
+    totalPrice: Number,
+    status: { type: String }
 })
 
 const orderModel = mongoose.model(collection, schema)
